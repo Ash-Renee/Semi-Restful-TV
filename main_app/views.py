@@ -28,21 +28,22 @@ def edit_show(request, show_id):
     return render(request, 'edit_shows.html', context)
 
 def submit_edit(request, show_id):
-    edited_show = Shows_to_update=Shows.objects.get(show=id)
+    edited_show = Shows.objects.get(id=show_id)
     if request.POST['title']:
-        shows.title = request.POST['title']
-    
+        edited_show.title = request.POST['title']
+
     if request.POST['network']:
-        shows.network = request.POST['shows.network']
-    
+        edited_show.network = request.POST['network']
+
     if request.POST['release_date']:
-        shows.release_date = request.POST['release_date']
-    
+        edited_show.release_date = request.POST['release_date']
+
     if request.POST['desc']:
-        shows.desc = request.POST['desc']
-    Shows_to_update.save()
+        edited_show.desc = request.POST['desc']
+
+    edited_show.save()
     print(request.POST)
-    return redirect('shows/show_id')
+    return redirect(f'/shows/{edited_show.id}')
 
 def show_listing(request, show_id):
     context = {"shows": Shows.objects.get(id=show_id)}
