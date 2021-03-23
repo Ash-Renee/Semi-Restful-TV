@@ -1,0 +1,20 @@
+from main_app.models import *
+
+Shows.objects.create(title="MASH", network="CBS", release_date="September 17th, 1972")
+Shows.objects.create(title="The West Wing", network="NBC", release_date="1999-09-22")
+Shows.objects.create(title="RWBY", network="Rooster Teeth", release_date="2013-07-18")
+Shows.objects.create(title="Chilling Adventures of Sabrina", network="Netflix", release_date="2018-10-26")
+Shows.objects.create(title="Stranger Things", network="Netflix", release_date="2016-07-15")
+Shows.objects.create(title="The Good Place", network="NBC", release_date="2016-09-19")
+
+## other Shows from group: Mr. Robot, The Good Place, Letterkenny, Battlestar Galactica (new one), 
+## gonna need a desc in the model field
+
+Shows.objects.create(title="The Good Place", network="NBC", release_date="September 19th, 2016")
+
+
+
+
+
+
+

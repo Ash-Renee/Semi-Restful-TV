@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Description</title>
+</head>
+
+<body>
+    <p>TV Show: {{shows.id}}</p>
+    <br>
+    <a href="/shows_list">Go Back</a>
+    <br>
+    <form action="/shows/{shows.id}" method="post">
+        {% csrf_token %}
+        <p>Title: {{shows.title}}</p>
+        <p>Network: {{shows.network}}</p>
+        <p>Release Date: {{shows.release_date}}</p>
+        <p>Description: {{shows.desc}}</p>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Last Updated At: {{shows.updated_at}}</p>
+    <br>
+    <br>
+    <a href="/shows/{{shows.id}}/edit">Edit</a>
+    <a href="/shows/{{shows.id}}/destroy">Delete</a>
+</body>
+
+</html>
