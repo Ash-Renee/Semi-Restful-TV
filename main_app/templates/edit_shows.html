@@ -34,6 +34,13 @@
         <br>
         <br>
         <input type="submit" value="Update" href="/shows/{{show.id}}/submit_edit">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %} style="color: red;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
 </div>
 </form>
 
